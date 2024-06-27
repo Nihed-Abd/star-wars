@@ -1,0 +1,111 @@
+<main>
+    <div
+      class="relative pt-16 pb-32 flex content-center items-center justify-center"
+      style="min-height: 75vh;"
+    >
+      <div
+        class="absolute top-0 w-full h-full bg-center bg-cover"
+        style='background-image: url("https://wallpapers.com/images/featured/star-wars-plzcoaffexgf4h81.jpg");'
+      >
+        <span
+          id="blackOverlay"
+          class="w-full h-full absolute opacity-75 bg-black"
+        ></span>
+      </div>
+      <div class="container relative mx-auto">
+        <div class="items-center flex flex-wrap">
+          <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+            <div class="pr-12">
+              <h1 class="text-white font-semibold text-5xl">
+                Explore the Universe of Star Wars.
+              </h1>
+              <p class="mt-4 text-lg text-gray-300">
+                Dive into the fascinating world of Star Wars through our collection of vehicles, films, and characters. Click on a category to begin your journey.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+        style="height: 70px;"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon
+            class="text-gray-300 fill-current"
+            points="2560 0 2560 100 0 100"
+          ></polygon>
+        </svg>
+      </div>
+    </div>
+    <section class="pb-20 bg-gray-300 -mt-24">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap">
+            <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg transition-transform transform hover:scale-105"
+              >
+                <div class="px-4 py-5 flex-auto">
+                  <div
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400"
+                  >
+                    <i class="fas fa-car"></i>
+                  </div>
+                  <h6 class="text-xl font-semibold">Cars</h6>
+                  <p class="mt-2 mb-4 text-gray-600">
+                    Explore the various vehicles used in the Star Wars universe. Click to view the list of cars.
+                  </p>
+                  <a routerLink="/cars" class="text-red-400 font-bold">View Cars</a>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-4/12 px-4 text-center">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg transition-transform transform hover:scale-105"
+              >
+                <div class="px-4 py-5 flex-auto">
+                  <div
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400"
+                  >
+                    <i class="fas fa-film"></i>
+                  </div>
+                  <h6 class="text-xl font-semibold">Films</h6>
+                  <p class="mt-2 mb-4 text-gray-600">
+                    Discover all the Star Wars films, from the original trilogy to the latest releases. Click to view the list of films.
+                  </p>
+                  <a routerLink="/films" class="text-blue-400 font-bold">View Films</a>
+                </div>
+              </div>
+            </div>
+            <div class="pt-6 w-full md:w-4/12 px-4 text-center">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg transition-transform transform hover:scale-105"
+              >
+                <div class="px-4 py-5 flex-auto">
+                  <div
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400"
+                  >
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <h6 class="text-xl font-semibold">Characters</h6>
+                  <p class="mt-2 mb-4 text-gray-600">
+                    Meet the iconic characters of Star Wars. Click to view the list of characters.
+                  </p>
+                  <a routerLink="/characters" class="text-green-400 font-bold">View Characters</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+  </main>
+  

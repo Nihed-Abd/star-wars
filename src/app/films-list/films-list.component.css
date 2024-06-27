@@ -1,0 +1,16 @@
+.film-card {
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin: 8px 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .film-card h2 {
+    margin: 0 0 8px;
+  }
+  
+  .film-card p {
+    margin: 4px 0;
+  }
+  

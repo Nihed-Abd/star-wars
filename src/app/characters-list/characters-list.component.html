@@ -1,0 +1,120 @@
+<main>
+    <div
+      class="relative pt-16 pb-32 flex content-center items-center justify-center"
+      style="min-height: 75vh;"
+    >
+      <div
+        class="absolute top-0 w-full h-full bg-center bg-cover"
+        style='background-image: url("https://wallpapers.com/images/hd/star-wars-background-cep4slo65ceg6r84.jpg");'
+      >
+        <span
+          id="blackOverlay"
+          class="w-full h-full absolute opacity-75 bg-black"
+        ></span>
+      </div>
+      <div class="container relative mx-auto">
+        <div class="items-center flex flex-wrap">
+          <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+            <div class="pr-12">
+              <h1 class="text-white font-semibold text-5xl">
+                Meet the Star Wars Characters
+              </h1>
+              <p class="mt-4 text-lg text-gray-300">
+                Learn about the iconic characters from the Star Wars universe. Click on a character to see more details.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+        style="height: 70px;"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon
+            class="text-gray-300 fill-current"
+            points="2560 0 2560 100 0 100"
+          ></polygon>
+        </svg>
+      </div>
+    </div>
+    <section class="pt-20 pb-48 bg-gray-300 -mt-24">
+      <div class="container mx-auto px-4">
+        <div class="main">
+          <div *ngIf="error" class="text-red-500 text-center my-4">
+            <p>Error: {{ error }}</p>
+          </div>
+          <div class="flex justify-center">
+            <input
+              type="text"
+              placeholder="Search Characters"
+              (input)="filterCharacters($event)"
+              class="mt-4 px-4 py-2 rounded-full w-full md:w-1/2 lg:w-1/3 text-center"
+            />
+          </div>
+          <div class="flex flex-wrap items-center mt-8" *ngIf="filteredCharacterList.length > 0">
+            <div *ngFor="let character of filteredCharacterList" (click)="setActiveCharacter(character)" class="w-full md:w-6/12 lg:w-4/12 px-4 mb-6 cursor-pointer">
+              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <div class="px-4 py-5 flex-auto">
+                    <div
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400"
+                  >
+                     <i class="fas fa-user text-xl"></i>
+                  </div>
+                  <h3 class="text-3xl mb-2 font-semibold leading-normal text-center text-indigo-700">{{ character.name }}</h3>
+                  <div class="text-center">
+                    <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
+                      Gender: {{ character.gender }}
+                    </p>
+                  </div>
+                </div>
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-t-lg"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div *ngIf="activeCharacter" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+            <div class="bg-white rounded-lg p-8 shadow-lg relative max-w-md w-full mx-auto">
+              <button (click)="clearActiveCharacter()" class="absolute top-0 right-0 mt-4 mr-4 text-gray-500 hover:text-gray-800">
+                <i class="fas fa-times"></i>
+              </button>
+              <div class="bg-center bg-cover h-48 rounded-t-lg" style='background-image: url("https://c4.wallpaperflare.com/wallpaper/690/875/800/star-wars-the-last-jedi-4k-background-hd-image-wallpaper-preview.jpg");'></div>
+              <div class="p-4">
+                <h2 class="text-2xl font-semibold mb-4 text-center">{{ activeCharacter.name }}</h2>
+                <div class="text-center">
+                  <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
+                    Gender: {{ activeCharacter.gender }}
+                  </p>
+                  <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
+                    Homeworld: {{ activeCharacter.homeworld.name }}
+                  </p>
+                  <div class="flex justify-center space-x-4 mt-4">
+                    <div class="flex flex-col items-center">
+                      <div class="w-8 h-8 rounded-full" [ngStyle]="{'background-color': activeCharacter.eyeColor}"></div>
+                      <span class="text-xs text-gray-600 mt-2">Eye Color : {{ activeCharacter.eyeColor }}</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                      <div class="w-8 h-8 rounded-full" [ngStyle]="{'background-color': activeCharacter.skinColor}"></div>
+                      <span class="text-xs text-gray-600 mt-2">Skin Color : {{ activeCharacter.skinColor }}</span>
+                    </div>
+                  </div>
+                </div>
+                <button (click)="clearActiveCharacter()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                  <i class="fas fa-times-circle mr-2"></i> Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
